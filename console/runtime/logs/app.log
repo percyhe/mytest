@@ -1,0 +1,1108 @@
+2018-03-21 17:39:35 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists' in C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php:1255
+Stack trace:
+#0 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1255): PDOStatement->execute()
+#1 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1072): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Migration.php(323): yii\db\Command->execute()
+#3 C:\xampp\htdocs\testyii\console\migrations\m130524_201442_init.php(26): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(725): m130524_201442_init->up()
+#5 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\testyii\yii(23): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`auth_key` varchar(32) NOT NULL,
+	`password_hash` varchar(255) NOT NULL,
+	`password_reset_token` varchar(255) UNIQUE,
+	`email` varchar(255) NOT NULL UNIQUE,
+	`status` smallint(6) NOT NULL DEFAULT 10,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1260): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1072): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Migration.php(323): yii\db\Command->execute()
+#3 C:\xampp\htdocs\testyii\console\migrations\m130524_201442_init.php(26): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(725): m130524_201442_init->up()
+#5 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\testyii\yii(23): yii\base\Application->run()
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2018-03-21 17:39:30 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    '#envTSLOGSHELLEXT776' => '530503264'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\testyii\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521625170.3976
+    'REQUEST_TIME' => 1521625170
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\testyii\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-03-21 17:39:35 [-][-][-][error][yii\base\ErrorException:32] exception 'yii\base\ErrorException' with message 'PHP Startup: zip: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20131226
+These options need to match
+' in Unknown:0
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-03-21 17:39:30 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    '#envTSLOGSHELLEXT776' => '530503264'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\testyii\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521625170.3976
+    'REQUEST_TIME' => 1521625170
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\testyii\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-03-21 17:40:31 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists' in C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php:1255
+Stack trace:
+#0 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1255): PDOStatement->execute()
+#1 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1072): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Migration.php(323): yii\db\Command->execute()
+#3 C:\xampp\htdocs\testyii\console\migrations\m130524_201442_init.php(26): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(725): m130524_201442_init->up()
+#5 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\testyii\yii(23): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`auth_key` varchar(32) NOT NULL,
+	`password_hash` varchar(255) NOT NULL,
+	`password_reset_token` varchar(255) UNIQUE,
+	`email` varchar(255) NOT NULL UNIQUE,
+	`status` smallint(6) NOT NULL DEFAULT 10,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1260): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Command.php(1072): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\db\Migration.php(323): yii\db\Command->execute()
+#3 C:\xampp\htdocs\testyii\console\migrations\m130524_201442_init.php(26): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(725): m130524_201442_init->up()
+#5 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(199): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\testyii\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\testyii\yii(23): yii\base\Application->run()
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2018-03-21 17:40:03 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    '#envTSLOGSHELLEXT776' => '530503264'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\testyii\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521625203.543
+    'REQUEST_TIME' => 1521625203
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\testyii\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-03-21 17:40:31 [-][-][-][error][yii\base\ErrorException:32] exception 'yii\base\ErrorException' with message 'PHP Startup: zip: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20131226
+These options need to match
+' in Unknown:0
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-03-21 17:40:03 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    '#envTSLOGSHELLEXT776' => '530503264'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\testyii\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521625203.543
+    'REQUEST_TIME' => 1521625203
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\testyii\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-03-21 17:41:34 [-][-][-][error][yii\base\ErrorException:32] exception 'yii\base\ErrorException' with message 'PHP Startup: zip: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20131226
+These options need to match
+' in Unknown:0
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-03-21 17:41:31 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    '#envTSLOGSHELLEXT776' => '530503264'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\testyii\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\testyii\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521625291.8579
+    'REQUEST_TIME' => 1521625291
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\testyii\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2018-03-22 13:43:03 [-][-][-][error][yii\base\InvalidArgumentException] exception 'yii\base\InvalidArgumentException' with message 'Invalid path alias: @mdm/admin/migrations' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\BaseYii.php:154
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(127): yii\BaseYii::getAlias('@mdm/admin/migr...')
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(181): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(155): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#9 {main}
+2018-03-22 13:43:03 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521697383.6344
+    'REQUEST_TIME' => 1521697383
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@mdm/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-03-22 13:43:46 [-][-][-][error][yii\base\InvalidArgumentException] exception 'yii\base\InvalidArgumentException' with message 'Invalid path alias: @mdm/admin/migrations' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\BaseYii.php:154
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(127): yii\BaseYii::getAlias('@mdm/admin/migr...')
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(181): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(155): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#9 {main}
+2018-03-22 13:43:46 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521697426.4107
+    'REQUEST_TIME' => 1521697426
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@mdm/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-03-22 13:47:22 [-][-][-][error][yii\base\InvalidArgumentException] exception 'yii\base\InvalidArgumentException' with message 'Invalid path alias: @mdm/admin/migrations' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\BaseYii.php:154
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(127): yii\BaseYii::getAlias('@mdm/admin/migr...')
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(181): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(155): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#9 {main}
+2018-03-22 13:47:22 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521697642.8914
+    'REQUEST_TIME' => 1521697642
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@mdm/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-03-22 13:51:00 [-][-][-][error][yii\base\InvalidArgumentException] exception 'yii\base\InvalidArgumentException' with message 'Invalid path alias: @mdm/admin/migrations' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\BaseYii.php:154
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(127): yii\BaseYii::getAlias('@mdm/admin/migr...')
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(181): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(155): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#9 {main}
+2018-03-22 13:51:00 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521697860.5922
+    'REQUEST_TIME' => 1521697860
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@mdm/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-03-23 15:44:03 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-03-23 15:44:00 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521791040.3835
+    'REQUEST_TIME' => 1521791040
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii/rbac/migrations/'
+    ]
+    'argc' => 3
+]
+2018-03-23 15:44:23 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+' in C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\MigrateController.php(210): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(875): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Controller.php(148): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\yii2018\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\yii2018\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2018-03-23 15:44:21 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Roaming'
+    'asl_log' => 'Destination=file'
+    'BOWER_PATH' => 'D:\\nodejs\\node_global'
+    'CLASSPATH' => 'C:\\Java\\jdk1.8.0_144\\lib\\tools.jar;C:\\Java\\jdk1.8.0_144\\lib/dt.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'EDUGLOBAL-ITNEW'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\eduglobal-itnews2'
+    'JAVA_HOME' => 'C:\\Java\\jdk1.8.0_144'
+    'LOCALAPPDATA' => 'C:\\Users\\eduglobal-itnews2\\AppData\\Local'
+    'LOGONSERVER' => '\\\\EDUGLOBAL-ITNEW'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NODE_PATH' => 'D:\\nodejs\\node_global\\node_modules'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Git\\mingw32\\libexec\\git-core;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Android\\android-sdk\\tools;C:\\Program Files\\TortoiseSVN\\bin;C:\\Java\\jdk1.8.0_144\\bin;D:\\Program Files (x86)\\Sybase\\PowerDesigner 16;D:\\nodejs\\node_global;D:\\nodejs\\node_global;C:\\Program Files\\MongoDB\\Server\\3.6\\bin;C:\\xampp\\php\\ext;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\eduglobal-itnews2\\AppData\\Local\\Microsoft\\WindowsApps;D:\\android\\sdk\\platform-tools;C:\\Users\\eduglobal-itnews2\\AppData\\Roaming\\npm;D:\\nodejs\\node_global;D:\\nodejs\\node_global;D:\\Program Files\\Microsoft VS Code\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3c03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SDK_HOME' => 'C:\\Android\\android-sdk'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\EDUGLO~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'eduglobal-itnew'
+    'USERDOMAIN_ROAMINGPROFILE' => 'eduglobal-itnew'
+    'USERNAME' => 'eduglobal-itnews2'
+    'USERPROFILE' => 'C:\\Users\\eduglobal-itnews2'
+    'windir' => 'C:\\WINDOWS'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\yii2018\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\yii2018\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1521791061.2368
+    'REQUEST_TIME' => 1521791061
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\yii2018\\yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@yii/rbac/migrations'
+    ]
+    'argc' => 3
+]
